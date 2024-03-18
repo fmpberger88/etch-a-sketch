@@ -33,6 +33,7 @@ for (let i = 0; i <16; i++) {
 
         resetButton.addEventListener("click", function () {
             cell.style.cssText = "background-color: white;"
+            cell.style.cssText = ""
         })
     }
 }
