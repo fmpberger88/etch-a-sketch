@@ -1,6 +1,5 @@
 let isMouseDown = false;
 let color = "blue";
-let gridSize = 2400;
 
 const sketch = document.querySelector(".sketch");
 const resetButton = document.querySelector(".resetButton");
@@ -22,11 +21,15 @@ colorPicker.addEventListener("input", function () {
 })
 
 slider.addEventListener("input",  function () {
-    gridSize = slider.value;
+    let gridSize = slider.value;
     console.log(slider.value)
+    createGrid(gridSize);
 })
 
-for (let i = 0; i <gridSize; i++) {
+
+function createGrid(gridSize) {
+    sketch.innerHTML = '';
+    for (let i = 0; i <gridSize; i++) {
         const cell = document.createElement('div');
         cell.classList.add("cell");
 
@@ -48,7 +51,11 @@ for (let i = 0; i <gridSize; i++) {
             cell.style.cssText = "background-color: white;"
             cell.style.cssText = ""
         })
+    }
 }
+
+createGrid(slider.value);
+
 
 
 
