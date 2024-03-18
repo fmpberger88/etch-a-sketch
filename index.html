@@ -9,8 +9,17 @@
 <body>
 <div class="container">
     <h1>Etch a Sketch</h1>
-    <button class="resetButton">Reset</button>
-    <input type="color" id="colorPicker" value="#0000ff">
+    <div class="inputContainer">
+        <div class="colorContainer">
+            <label for="colorPicker">Color Picker</label>
+            <input type="color" id="colorPicker" value="#0000ff">
+        </div>
+        <button class="resetButton">Reset</button>
+        <div class="slider">
+            <label for="gridSize">Grid Size</label>
+            <input id="gridSize" type="range" min="1200" max="3600" step="200" value="2400">
+        </div>
+    </div>
     <div class="sketch">
 
     </div>
