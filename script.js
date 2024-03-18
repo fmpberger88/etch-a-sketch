@@ -28,7 +28,7 @@ slider.addEventListener("input",  function () {
 
 
 function createGrid(gridSize) {
-    sketch.innerHTML = '';
+    sketch.textContent = '';
     for (let i = 0; i <gridSize; i++) {
         const cell = document.createElement('div');
         cell.classList.add("cell");
