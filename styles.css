@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: lightslategray;
+}
+
+.resetButton {
+    background-color: dodgerblue;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 20px;
+    border: 1px black solid;
+    border-radius: 30px;
+    margin: 20px 0;
+}
+
+.resetButton:hover {
+    background-color: steelblue;
+    color: white;
+}
+
+.resetButton:active {
+    transform: scale(0.9);
+}
+
+.sketch {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+    height: auto;
+}
+
+.cell {
+    width: 10px;
+    height: 10px;
+    border: 0.01px black solid;
+    background-color: white;
+}
+
+.cell:hover {
+    background-color: darkred;
+}
