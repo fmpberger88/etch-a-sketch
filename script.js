@@ -25,6 +25,7 @@ function createGrid(gridSize) {
     cell.classList.add('cell');
 
     // if the user hovers and mousedown
+    // eslint-disable-next-line no-loop-func
     cell.addEventListener('mouseover', () => {
       if (isMouseDown) {
         cell.style.cssText = `background-color: ${color};`;
@@ -32,6 +33,7 @@ function createGrid(gridSize) {
     });
 
     // if the user clicks
+    // eslint-disable-next-line no-loop-func
     cell.addEventListener('mousedown', () => {
       cell.style.cssText = `background-color: ${color};`;
     });
