@@ -1,62 +1,52 @@
 let isMouseDown = false;
-let color = "blue";
+let color = 'blue';
 
-const sketch = document.querySelector(".sketch");
-const resetButton = document.querySelector(".resetButton");
-const slider = document.querySelector("#gridSize");
-const colorPicker = document.querySelector("#colorPicker");
+const sketch = document.querySelector('.sketch');
+const resetButton = document.querySelector('.resetButton');
+const slider = document.querySelector('#gridSize');
+const colorPicker = document.querySelector('#colorPicker');
 
+document.addEventListener('mousedown', () => {
+  isMouseDown = true;
+});
 
-document.addEventListener("mousedown", () => {
-    isMouseDown = true;
-})
+document.addEventListener('mouseup', () => {
+  isMouseDown = false;
+});
 
-document.addEventListener("mouseup", () => {
-    isMouseDown = false;
-})
-
-colorPicker.addEventListener("input", function () {
-    color = colorPicker.value;
-    console.log(colorPicker.value)
-})
-
-slider.addEventListener("input",  function () {
-    let gridSize = slider.value;
-    console.log(slider.value)
-    createGrid(gridSize);
-})
-
+colorPicker.addEventListener('input', () => {
+  color = colorPicker.value;
+});
 
 function createGrid(gridSize) {
-    sketch.textContent = '';
-    for (let i = 0; i <gridSize; i++) {
-        const cell = document.createElement('div');
-        cell.classList.add("cell");
+  sketch.textContent = '';
+  for (let i = 0; i < gridSize; i += 1) {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
 
-        // if the user hovers and mousedown
-        cell.addEventListener("mouseover", function () {
-            if (isMouseDown) {
-                cell.style.cssText = `background-color: ${color};`
-            }
-        })
+    // if the user hovers and mousedown
+    cell.addEventListener('mouseover', () => {
+      if (isMouseDown) {
+        cell.style.cssText = `background-color: ${color};`;
+      }
+    });
 
-        // if the user clicks
-        cell.addEventListener("mousedown", function (e) {
-            cell.style.cssText = `background-color: ${color};`
-            console.log(e.target)
-        })
-        sketch.appendChild(cell)
+    // if the user clicks
+    cell.addEventListener('mousedown', () => {
+      cell.style.cssText = `background-color: ${color};`;
+    });
+    sketch.appendChild(cell);
 
-        resetButton.addEventListener("click", function () {
-            cell.style.cssText = "background-color: white;"
-            cell.style.cssText = ""
-        })
-    }
+    resetButton.addEventListener('click', () => {
+      cell.style.cssText = 'background-color: white;';
+      cell.style.cssText = '';
+    });
+  }
 }
 
+slider.addEventListener('input', () => {
+  const gridSize = slider.value;
+  createGrid(gridSize);
+});
+
 createGrid(slider.value);
-
-
-
-
-
