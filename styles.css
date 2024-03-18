@@ -21,7 +21,7 @@ body {
     background-color: lightslategray;
 }
 
-.inputContainer {
+.board {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,11 +32,26 @@ body {
     margin: 30px 0;
 }
 
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 .colorContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
 
 button {
